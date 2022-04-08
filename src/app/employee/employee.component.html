@@ -1,0 +1,18 @@
+
+
+
+<table>
+    <thead>
+        <th>Name</th> <th>salary</th> <th>depart</th> <th>city</th> <th>mobile</th><th>managerName</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of employees">
+            <td>{{p.name}}</td>
+            <td>{{p.salary}}</td>
+            <td>{{p.depart}}</td> 
+            <td>{{p.city}}</td>
+            <td>{{p.mobile}}</td>
+            <td>{{p.managerName}}</td>
+        </tr>
+    </tbody>
+</table>

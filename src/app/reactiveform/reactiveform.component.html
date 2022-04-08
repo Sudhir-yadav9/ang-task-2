@@ -1,0 +1,179 @@
+<p>reactiveform works!</p>
+
+<form [formGroup]="form" (ngSubmit)="afterSubmit()">
+    <strong>Name</strong>
+    <p>
+        <input type="text" id="name" formControlName="name"  />
+    </p>
+    <div *ngIf="f['name'].invalid && (f['name'].touched || f['name'].dirty)">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+         Name is required
+        </div>
+        </div>
+
+        <strong>Email</strong>
+ <p>
+            <input type="text" id="email" formControlName="email" placeholder="Enter the email" />
+        </p>
+        <div *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+             Email is required
+            </div>
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['minlength']">
+                Email should be 5 char long
+               </div>
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['pattern']">
+                Email Only alphabetic character only
+            </div>
+    
+        </div>
+        <strong>Phone Number</strong>
+        <p>
+            <input type="number" id="pno" formControlName="pno" placeholder="Enter the Phone Number" />
+        </p>
+        <div *ngIf="f['pno'].invalid && (f['pno'].touched || f['pno'].dirty)">
+            <div *ngIf="f['pno'].errors && f['pno'].errors['required']">
+                Phone Number is required
+            </div>
+    
+            <div *ngIf="f['pno'].errors && f['pno'].errors['minlength']">
+                Phone Number should be 5 char long
+               </div>
+    
+            <div *ngIf="f['pno'].errors && f['pno'].errors['pattern']">
+                Phone Number Only alphabetic character only
+            </div>
+    
+            </div>
+
+
+            <strong>City</strong>
+        <p>
+            <input type="text" id="city" formControlName="city" placeholder="Enter the city" />
+        </p>
+        <div *ngIf="f['city'].invalid && (f['city'].touched || f['city'].dirty)">
+            <div *ngIf="f['city'].errors && f['city'].errors['required']">
+             city is required
+            </div>
+    
+            <div *ngIf="f['city'].errors && f['city'].errors['minlength']">
+                city should be 5 char long
+               </div>
+    
+            <div *ngIf="f['city'].errors && f['city'].errors['pattern']">
+                city Only alphabetic character only
+            </div>
+    
+            </div>
+
+            
+
+        <p><button type="submit">Submit</button></p>
+</form>
+<!--
+<h5>Reactive Form Validation</h5>
+
+<form [formGroup]="form" (ngSubmit)="afterSubmit()">
+   
+    <strong>Name</strong>
+    <p>
+        <input type="text" id="name" formControlName="name" placeholder="Enter the name" />
+    </p>
+    
+    <div *ngIf="f['name'].invalid && (f['name'].touched || f['name'].dirty)">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+         Name is required
+        </div>
+
+        <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+            Name should be 5 char long
+           </div>
+
+        <div *ngIf="f['name'].errors && f['name'].errors['pattern']">
+            Only alphabetic character only
+        </div>
+
+        </div>
+
+        <strong>Email</strong>
+        <p>
+            <input type="text" id="email" formControlName="email" placeholder="Enter the email" />
+        </p>
+        <div *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+             Email is required
+            </div>
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['minlength']">
+                Email should be 5 char long
+               </div>
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['pattern']">
+                Email Only alphabetic character only
+            </div>
+    
+            </div>
+
+            <strong>Phone Number</strong>
+        <p>
+            <input type="text" id="pno" formControlName="pno" placeholder="Enter the Phone Number" />
+        </p>
+        <div *ngIf="f['pno'].invalid && (f['pno'].touched || f['pno'].dirty)">
+            <div *ngIf="f['pno'].errors && f['pno'].errors['required']">
+                Phone Number is required
+            </div>
+    
+            <div *ngIf="f['pno'].errors && f['pno'].errors['minlength']">
+                Phone Number should be 5 char long
+               </div>
+    
+            <div *ngIf="f['pno'].errors && f['pno'].errors['pattern']">
+                Phone Number Only alphabetic character only
+            </div>
+    
+            </div>
+
+            <strong>City</strong>
+        <p>
+            <input type="text" id="city" formControlName="city" placeholder="Enter the city" />
+        </p>
+        <div *ngIf="f['city'].invalid && (f['city'].touched || f['city'].dirty)">
+            <div *ngIf="f['city'].errors && f['city'].errors['required']">
+             city is required
+            </div>
+    
+            <div *ngIf="f['city'].errors && f['city'].errors['minlength']">
+                city should be 5 char long
+               </div>
+    
+            <div *ngIf="f['city'].errors && f['city'].errors['pattern']">
+                city Only alphabetic character only
+            </div>
+    
+            </div>
+
+            <strong>PinCode</strong>
+        <p>
+            <input type="text" id="pco" formControlName="pco" placeholder="Enter the PinCode" />
+        </p>
+        <div *ngIf="f['pco'].invalid && (f['pco'].touched || f['pco'].dirty)">
+            <div *ngIf="f['pco'].errors && f['pco'].errors['required']">
+             PinCode is required
+            </div>
+    
+            <div *ngIf="f['pco'].errors && f['pco'].errors['minlength']">
+                Pincode should be 5 char long
+               </div>
+    
+            <div *ngIf="f['pco'].errors && f['pco'].errors['pattern']">
+                Pincode Only alphabetic character only
+            </div>
+    
+            </div>
+        
+
+        <p><button type="submit">Submit</button></p>
+</form>
+-->

@@ -1,0 +1,37 @@
+
+
+<h4>Filter According to :</h4>
+<span style="float:left">
+<label for="search" class="col-sm-3 col-form-label" style="text-align: right;">Product Name :</label></span>
+    <div class="col-sm-2">
+      <span style="float:left"><input type="text" [(ngModel)]="searchName" class="form-control" id="searchName" placeholder="Enter here Name" style="border-radius:5px"/></span>
+    </div>
+
+    <span style="float:left">
+        <label for="search" class="col-sm-3 col-form-label" style="text-align: right;">Brand Name :</label></span>
+      <div class="col-sm-2">
+        <span style="float:left">
+        <input type="text" [(ngModel)]="searchBrand" class="form-control" id="searchBrand" placeholder="Enter here" style="border-radius:5px" /></span>
+    </div>
+  
+    <span style="float:left">
+      <label for="search" class="col-sm-3 col-form-label" style="text-align: right;">Price :</label></span>
+    <div class="col-sm-2">
+      <span style="float:left">
+      <input type="text" [(ngModel)]="searchPrice" class="form-control" id="searchPrice" placeholder="Enter here" style="border-radius:5px"/></span>
+  </div>
+
+<table>
+    <thead>
+        <th>Name</th> <th>Brand</th> <th>Model</th> <th>Price</th> <th>Availability</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products ">
+            <td>{{p.name}}</td>
+            <td>{{p.brand}}</td>
+            <td>{{p.model}}</td> 
+            <td>{{p.price}}</td>
+            <td>{{p.availability}}</td>
+        </tr>
+    </tbody>
+</table>
